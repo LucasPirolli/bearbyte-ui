@@ -15,10 +15,10 @@ interface ButtonProps {
   rightIcon?: React.ReactNode;
   isLoading?: boolean;
   spinnerPlacement?: "start" | "end";
-  onClick: () => void;
+  onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({
+export const Button: React.FC<ButtonProps> = ({
   color,
   bgColor,
   fontWeight,
@@ -43,7 +43,7 @@ const Button: React.FC<ButtonProps> = ({
       size={size}
       variant={variant}
       disabled={disabled || isLoading}
-      // isLoading={isLoading}
+      isLoading={isLoading}
       // leftIcon={leftIcon}
       // rightIcon={rightIcon}
       onClick={onClick}
@@ -68,4 +68,3 @@ const Button: React.FC<ButtonProps> = ({
   );
 };
 
-export default Button;
